@@ -34,6 +34,21 @@ img {
   max-width: 100%;
 }
 
+figure {
+  margin: 0;
+  line-height: 0;
+  position: relative;
+}
+
+figcaption {
+  position: absolute;
+  line-height: 1.5;
+  color: #fff;
+  padding: 1em;
+  background: rgba(19, 43, 102, 0.85);
+  width: 100%;
+  bottom: 0;
+}
 /* =======================
    Base Layout Styles 
 ======================== */
@@ -41,11 +56,18 @@ img {
 /* Navigation  */
 .name {
   font-size: 1.25em;
+  margin: 0;
 }
 
 .name a,
 nav a {
   text-align: center;
+  display: block;
+  padding: 0.5em 1em;
+}
+
+nav {
+  margin-top: 0.25em;
 }
 
 nav a {
@@ -63,6 +85,13 @@ nav a:hover {
 .banner {
   color: #fff;
   background: #3acec2;
+  text-align: center;
+  padding: 3.2em 0.25em;
+  margin-bottom: 4em;
+}
+
+main {
+  padding: 1em;
 }
 
 /* Page Elements */
@@ -75,4 +104,65 @@ footer {
   text-align: center;
   padding: 2em 1em;
   background: #d9e4ea;
+}
+
+/* ================
+Media Queries
+================ */
+
+/* Media queries in CSS should be ordered from smallest to largest*/
+
+@media (min-width: 48em) {
+  body {
+    padding-top: 3.25em;
+  }
+  header {
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.97);
+    width: 100%;
+    top: 0;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    z-index: 2;
+  }
+  main,
+  .container {
+    width: 90%;
+    margin: 0 auto;
+  }
+  header .container {
+    display: flex;
+    justify-content: space-between;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+  }
+  .tagline {
+    font-size: 1.4em;
+  }
+  /*Columns*/
+  main {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .welcome,
+  .food {
+    flex-basis: 50%;
+  }
+  .welcome {
+    padding-right: 1em;
+  }
+}
+
+@media (min-width: 64em) {
+  .welcome,
+  .directions {
+    flex-basis: 30%;
+  }
+  .food {
+    flex-basis: 40%;
+  }
+  .directions {
+    padding-left: 1em;
+  }
 }
